@@ -83,7 +83,7 @@ class NeighboringNodes():
                                         neighbors.append(T)
 
         return neighbors
-
+#--------------------------------END OF TASK 2---------------------------------
 object = NeighboringNodes(5, False)
 object.create_grid()
 cords = object.return_cords(12)
