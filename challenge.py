@@ -8,7 +8,6 @@ class NeighboringNodes():
         self.size = int(size)
         self.debug = debug
 
-
     def create_grid(self):
         grid1 = [[row,col] for row in range(1, self.size + 1) for col in range(1, self.size + 1)]
 
