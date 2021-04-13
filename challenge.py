@@ -33,7 +33,7 @@ class NeighboringNodes():
 #------------------------END OF TASK 1-----------------------------------------
 
 
-obj = NeighboringNodes(3, 'false')
+obj = NeighboringNodes(4, 'false')
 obj.create_grid()
 cords = obj.return_cords(3)
 print(cords)
