@@ -42,11 +42,22 @@ class NeighboringNodes():
  def patterns(self, x, y, m, type)
 ```
 * Task 2 is developed using Python functions and exceptions were handles where ever possible. The algorithm can be found in the code sample and comments were provided for better understanding of code.
+
+### Task 3 - SQL schema
+* Assume that this Python application is logging all values to a database that were calculated by different methods stated in the application.
+* Suppose if we are initializing the NeighboringNodes class with size and debug value, those values are written to a table named grid_operations in MYSQL Database
+* The table structure for grid_operations is given below.
+```
+|grid_size (int)| debug (boolean) |
+|-------------- | ----------------|
+|       3       |      True       |
+|       5       |      True       |
+|       3       |      False      |
+|       7       |      False      |
+```
+
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
-### Installing
-
-
-
-## Running the tests
+## Running tests
+*
