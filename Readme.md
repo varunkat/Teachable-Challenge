@@ -1,4 +1,4 @@
-# Neighboring Nodes Challenge
+# NEIGHBORING NODES CHALLENGE
 
 The below challenge is focused on constructing a nxn grid of defined size n consisting of (x,y) coordinates and index in the order of grid creation. Users can specify different parameters to know the coordinates, index position and print out patterns (SQUARE, CROSS and DIAMOND) based on their requirements. A Database schema was designed leveraging different tables and assumptions and was discussed in detail in the below sections.
 
@@ -36,7 +36,12 @@ class NeighboringNodes():
 ```
  def neighborhood_nodes(self, x, y, i, m ,type):
 ```
-*
+* This method will check if the user has entered either (x,y) or i. If not, it will print the error message. Also, this will check if the entered radius is > 0 and < size/2.
+* This method will call another method stated below for getting neighbors in preferred patterns
+```
+ def patterns(self, x, y, m, type)
+```
+* Task 2 is developed using Python functions and exceptions were handles where ever possible. The algorithm can be found in the code sample and comments were provided for better understanding of code.
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 

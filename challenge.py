@@ -13,7 +13,7 @@ class NeighboringNodes():  # initiating main class
 
         for i in enumerate(grid1, 1): #assigning index value of the order of node creation
             grid.append(i)
-        print(grid)
+        #print(grid)
 
         if self.debug == True: #printing (x,y,i) parameters for all nodes in grid
             for node in grid:
@@ -22,18 +22,21 @@ class NeighboringNodes():  # initiating main class
 
 
     def return_cords(self, index): # method to return (x,y) coordinates for specified node index value
-        for node in grid:
-            if node[0] == index:
-                T = (node[1][0], node[1][1])
-            else:
-                T = 'index value entered is out of range'
-        return T
+        try:
+            for node in grid:
+                if node[0] == index:
+                    T = (node[1][0], node[1][1])
+            return T
+        except:
+            print('Index value is out of range, enter correct value')
+
 #----------------------------------------END OF TASK 1-------------------------------------------------------------
 
-    def patterns(self, x, y, m, type):
-
+    def patterns(self, x, y, m, type): # method to process neighbor nodes based on provided pattern
+        T = (x,y)
+        neighbors.append(T) #appending given root node from where neighbors has to be discovered
         for node in grid:
-            if type == "CROSS":
+            if type == "CROSS": # code block for CROSS pattern
                 if node[1][0] == x and node[1][1] == y:
                     continue
                 if node[1][0] == x:
@@ -48,7 +51,7 @@ class NeighboringNodes():  # initiating main class
                             T1 = (k, y)
                             neighbors.append(T1)
 
-            elif type == "SQUARE":
+            elif type == "SQUARE": # code block for SQUARE pattern
                 for i in range(x - m, x + m + 1):
                     for j in range(y - m, y + m + 1):
                         if node[1][0] == x and node[1][1] == y:
@@ -57,7 +60,7 @@ class NeighboringNodes():  # initiating main class
                             T = (i,j)
                             neighbors.append(T)
 
-            elif type == "DIAMOND":
+            elif type == "DIAMOND": # code block for DIAMOND pattern
                 for v in range(0, m + 1):
                     if node[1][0] == x and node[1][1] == y:
                         continue
@@ -82,9 +85,9 @@ class NeighboringNodes():  # initiating main class
 
         return neighbors
 
-    def neighborhood_nodes(self, x, y, i, m ,type):
-        if m > 0 and m <= self.size/2:
-            if x and y is not None and i is None:
+    def neighborhood_nodes(self, x, y, i, m ,type): #method to return neighborhood nodes based on pattern provided
+        if m > 0 and m <= self.size/2:  #checking if radius is in range
+            if x and y is not None and i is None: # code block to accept either (x,y) or index value
                 nodes = self.patterns(x,y,m,type)
             elif i is not None:
                 for node in grid:
@@ -93,14 +96,14 @@ class NeighboringNodes():  # initiating main class
                         y = node[1][1]
                         nodes = self.patterns(x,y,m,type)
             else:
-                nodes = 'Expected either (x,y) or i'
+                nodes = 'Expected either (x,y) or i' # error message when wrong parameters are provided
         else:
-            nodes = 'Radius is out of range'
+            nodes = 'Radius is out of range' # error message for radius
         return nodes
-#--------------------------------END OF TASK 2---------------------------------
-object = NeighboringNodes(3, False)
+#----------------------------------------END OF TASK 2----------------------------------------------------------------------
+object = NeighboringNodes(7, False)
 object.create_grid()
 cords = object.return_cords(12)
-neighbor_nodes = object.neighborhood_nodes(x = 3, y = 3, i = None , m = 2, type = "DIAMOND") #have to perform handling to accept either x and y or i
+neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 2, type = "CROSS") #have to perform handling to accept either x and y or i
 print(cords)
 print(neighbor_nodes)
