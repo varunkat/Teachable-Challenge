@@ -13,7 +13,7 @@ class NeighboringNodes():  # initiating main class
 
         for i in enumerate(grid1, 1): #assigning index value of the order of node creation
             grid.append(i)
-        #print(grid)
+        print(grid)
 
         if self.debug == True: #printing (x,y,i) parameters for all nodes in grid
             for node in grid:
@@ -25,9 +25,12 @@ class NeighboringNodes():  # initiating main class
         for node in grid:
             if node[0] == index:
                 T = (node[1][0], node[1][1])
+            else:
+                T = 'index value entered is out of range'
         return T
 #----------------------------------------END OF TASK 1-------------------------------------------------------------
-    def patterns(self, x, y, i, m, type):
+
+    def patterns(self, x, y, m, type):
 
         for node in grid:
             if type == "CROSS":
@@ -78,10 +81,26 @@ class NeighboringNodes():  # initiating main class
                                     neighbors.append(T)
 
         return neighbors
+
+    def neighborhood_nodes(self, x, y, i, m ,type):
+        if m > 0 and m <= self.size/2:
+            if x and y is not None and i is None:
+                nodes = self.patterns(x,y,m,type)
+            elif i is not None:
+                for node in grid:
+                    if node[0] == i:
+                        x = node[1][0]
+                        y = node[1][1]
+                        nodes = self.patterns(x,y,m,type)
+            else:
+                nodes = 'Expected either (x,y) or i'
+        else:
+            nodes = 'Radius is out of range'
+        return nodes
 #--------------------------------END OF TASK 2---------------------------------
-object = NeighboringNodes(5, True)
+object = NeighboringNodes(3, False)
 object.create_grid()
 cords = object.return_cords(12)
-neighbor_nodes = object.patterns(x = 3, y = 3, i = 18 , m = 2, type = "DIAMOND") #have to perform handling to accept either x and y or i
+neighbor_nodes = object.neighborhood_nodes(x = 3, y = 3, i = None , m = 2, type = "DIAMOND") #have to perform handling to accept either x and y or i
 print(cords)
 print(neighbor_nodes)

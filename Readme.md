@@ -20,6 +20,10 @@ class NeighboringNodes():
  def create_grid(self):
 ```
 * This algorithm was designed to assign coordinates from 1 instead of 0. (Ex: Node 1 will have (1,1) as (x,y) coordinates)
+* Below is a sample grid that is created with size = 3
+```
+ [(1, [1, 1]), (2, [1, 2]), (3, [1, 3]), (4, [2, 1]), (5, [2, 2]), (6, [2, 3]), (7, [3, 1]), (8, [3, 2]), (9, [3, 3])]
+```
 * Once the grid was created with index values and (x,y) coordinates, if we mention the debug value is True, this method will print (x,y,i) features for all the nodes created in grid.
 * Below method will take index of the node as a parameter and returns (x,y) coordinates of specified node index value.
 ```
@@ -27,7 +31,12 @@ class NeighboringNodes():
 ```
 * Task 1 is developed using python functions and Python Lists. The specific implementation part is mentioned in code as comments
 
-
+### Task 2 - Finding neighbors
+* Second task is to add a method that will accept either (x,y) or index of the node. It also accepts the radius of neighborhood (m) and the type of neighborhood pattern to return the neighboring nodes that falls in specified pattern. Below is the specified method name.
+```
+ def neighborhood_nodes(self, x, y, i, m ,type):
+```
+*
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
