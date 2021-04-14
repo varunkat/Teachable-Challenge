@@ -1,32 +1,32 @@
 
-grid = []
-neighbors = []
+grid = []   # empty list for creating grid (Task1)
+neighbors = []   #empty list for capturing nodes for different patterns (Task 2)
 
-class NeighboringNodes():
+class NeighboringNodes():  # initiating main class
 
-    def __init__(self, size, debug:bool):
+    def __init__(self, size, debug:bool): #passing parameters to class
         self.size = int(size)
         self.debug = debug
 
-    def create_grid(self):
-        grid1 = [[row,col] for row in range(1, self.size + 1) for col in range(1, self.size + 1)]
+    def create_grid(self): # method to create grid
+        grid1 = [[row,col] for row in range(1, self.size + 1) for col in range(1, self.size + 1)] #assigning coordinates to nodes
 
-        for i in enumerate(grid1, 1):
+        for i in enumerate(grid1, 1): #assigning index value of the order of node creation
             grid.append(i)
         #print(grid)
 
-        if self.debug == True:
+        if self.debug == True: #printing (x,y,i) parameters for all nodes in grid
             for node in grid:
                 feature = (node[1][0], node[1][1], node[0])
                 print(feature)
 
 
-    def return_cords(self, index):
+    def return_cords(self, index): # method to return (x,y) coordinates for specified node index value
         for node in grid:
             if node[0] == index:
                 T = (node[1][0], node[1][1])
         return T
-#------------------------END OF TASK 1-----------------------------------------
+#----------------------------------------END OF TASK 1-------------------------------------------------------------
     def patterns(self, x, y, i, m, type):
 
         for node in grid:
