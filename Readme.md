@@ -7,7 +7,7 @@ The below challenge is focused on constructing a nxn grid of defined size n cons
 
 This challenge was divided into three tasks and the detailed description for each task is provided below.
 
-###Task 1 - Build the grid
+### Task 1 - Build the grid
 * First task is about building a class that will accept two different parameters (size, debug) and adding methods to construct the grid and another method to return coordinates of the index
 * The name of the class is mentioned below
 ```
