@@ -83,3 +83,55 @@ for i in test:
 
 
 print(neighbors)
+
+
+
+'''T = (x,y)
+neighbors.append(T)
+for node in grid:
+    if type == "CROSS":
+        if node[1][0] == x and node[1][1] == y:
+            continue
+        if node[1][0] == x:
+            for j in range(y - m, y + m + 1):
+                if node[1][1] == j:
+                    T = (x, j)
+                    neighbors.append(T)
+
+        if node[1][1] == y:
+            for k in range(x - m, x + m + 1):
+                if node[1][0] == k:
+                    T1 = (k, y)
+                    neighbors.append(T1)
+
+    elif type == "SQUARE":
+        for i in range(x - m, x + m + 1):
+            for j in range(y - m, y + m + 1):
+                if node[1][0] == x and node[1][1] == y:
+                    continue
+                if node[1][0] == i and node[1][1] == j:
+                    T = (i,j)
+                    neighbors.append(T)
+
+    elif type == "DIAMOND":
+        for v in range(0, m + 1):
+            if node[1][0] == x and node[1][1] == y:
+                continue
+
+            if node[1][0] == x - v:
+                for j in range(y - m + v, y + m + 1 - v):
+                    if node[1][1] == j:
+                        T = (x - v, j)
+                        if T in neighbors:
+                            continue
+                        else:
+                            neighbors.append(T)
+
+            if node[1][0] == x + v:
+                for j in range(y - m + v, y + m + 1 - v):
+                    if node[1][1] == j:
+                        T = (x + v, j)
+                        if T in neighbors:
+                            continue
+                        else:
+                            neighbors.append(T)'''
