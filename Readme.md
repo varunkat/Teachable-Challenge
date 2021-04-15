@@ -48,6 +48,8 @@ class NeighboringNodes():
 * Suppose if we are initializing the NeighboringNodes class with size and debug value, those values are written to a table named grid_operations in MYSQL Database
 * The table structure for grid_operations is given below.
 ```
+table grid_operations;
+
 |grid_size (int)| debug (boolean) |
 |-------------- | ----------------|
 |       3       |      True       |
@@ -55,7 +57,29 @@ class NeighboringNodes():
 |       3       |      False      |
 |       7       |      False      |
 ```
+* Once this table was created, assume that a n X n size grid is created and respective (x,y) and index values are stored to grid_structure table as below
+```
+table grid_structure;
 
+|   size (int)  |   x_value (int)  |  y_value (int) |   index (int)   |
+|-------------- | -----------------| ---------------|-----------------|
+|       3       |        1         |       1        |        1        |
+|       3       |        1         |       2        |        2        |
+|       3       |        1         |       3        |        3        |
+|       3       |        2         |       1        |        4        |
+|       3       |        2         |       2        |        5        |
+|       3       |        2         |       3        |        6        |
+|       3       |        3         |       1        |        7        |
+|       3       |        3         |       2        |        8        |
+|       3       |        3         |       3        |        9        |
+|       5       |        1         |       1        |        1        |
+|       5       |        1         |       2        |        2        |
+|       .       |        .         |       .        |        .        |
+|       .       |        .         |       .        |        .        |
+|       .       |        .         |       .        |        .        |
+|       .       |        .         |       .        |        .        |
+|       7       |        7         |       7        |        49       |
+```
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
