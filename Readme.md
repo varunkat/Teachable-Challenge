@@ -45,9 +45,12 @@ class NeighboringNodes():
 
 ### Task 3 - SQL schema
 * Assume that this Python application is logging all values to a database that were calculated by different methods stated in the application.
-* Suppose if we are initializing the NeighboringNodes class with size, this value is written to a table named **grid** in MYSQL Database
-* The table structure for grid is given below.
+* Suppose if we are initializing the NeighboringNodes class with size, assume that value is written to a table named **grid** in MYSQL Database
+* The table structure for grid is given below with create table command.
 ```
+MYSQL command: CREATE TABLE grid (grid_size INT);
+               INSERT INTO grid (grid_size) VALUES(3), (5), (7);
+
 table grid:
 
 |grid_size (int)|
@@ -58,6 +61,8 @@ table grid:
 ```
 * Once this above table was created, assume that a n x n size grid is created and respective (x,y) and index values are stored to **grid_structure** table as below
 ```
+MYSQL command: CREATE TABLE grid_structure (size INT, x_value INT, y_value INT, m_index INT);
+
 table grid_structure:
 
 |   size (int)  |   x_value (int)  |  y_value (int) |   m_index (int) |
@@ -81,22 +86,23 @@ table grid_structure:
 ```
 * Assume that if we call neighboring_nodes() method, a table called **patterns** with radius, type of pattern and grid size were created as shown below
 ```
+MYSQL command: CREATE TABLE patterns (grid_size INT, pattern_type VARCHAR(20), radius INT);
 table patterns:
 
-|grid_size (int)| pattern_type (string) | radius (int) |
-|-------------- | ----------------------|--------------|
-|       3       |        DIAMOND        |      1       |
-|       5       |        CROSS          |      2       |
-|       3       |        SQUARE         |      1       |
-|       7       |        DIAMOND        |      3       |
+|grid_size (int)| pattern_type (varchar) | radius (int) |
+|-------------- | -----------------------|--------------|
+|       3       |        DIAMOND         |      1       |
+|       5       |        CROSS           |      2       |
+|       3       |        SQUARE          |      1       |
+|       7       |        DIAMOND         |      3       |
 ```
-* Since we have created three tables, we have a primary key assigned to each table and a foreign key relations between tables. Assume that **patterns** and **grid_structure** tables were related to **grid**. Referential integrity is defined below.
+* Since we have created three tables, we have foreign key relations between tables. **patterns** and **grid_structure** tables were related to **grid**. Referential integrity is defined below.
 ```
- -> grid_size is the PRIMARY KEY for grid
- -> size in grid_structure is a FOREIGN KEY for grid
- -> grid_size in patterns is a FOREIGN KEY for grid
+ -> grid_size key is the PRIMARY KEY for grid
+ -> size key in grid_structure is a FOREIGN KEY for grid
+ -> grid_size key in patterns is a FOREIGN KEY for grid
 ```
-*
+* 
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
