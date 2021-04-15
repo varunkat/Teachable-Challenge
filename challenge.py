@@ -106,6 +106,6 @@ class NeighboringNodes():  # initiating main class
 object = NeighboringNodes(7, False)
 object.create_grid()
 coordinates = object.return_cords(12)
-neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 2, type = "DIAMOND") 
+neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 3, type = "DIAMOND")
 print(coordinates)
 print(neighbor_nodes)
