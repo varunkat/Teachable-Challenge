@@ -122,13 +122,13 @@ on p.grid_size = gv.size;
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output
 
 ## Defining Parameters
-* Both Task 1 and Task 2 require some parameters to be passed to achieve the desired result
+* Both Task 1 and Task 2 require some parameters to be passed to get the desired result
 * If we want to initiate a grid with size = 7 and debug = False, this can be done in the code snippet by passing parameters as below
 ```
 object = NeighboringNodes(7, False)
 object.create_grid()
 ```
-* If we want to print the coordinates for node having index = 12, this is acheived by passing parameter as mentioned below
+* If we want to print the coordinates for node having index = 12, this is achieved by passing parameter as mentioned below
 ```
 coordinates = object.return_cords(12)
 print(coordinates)
