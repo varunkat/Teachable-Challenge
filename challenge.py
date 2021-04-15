@@ -101,9 +101,11 @@ class NeighboringNodes():  # initiating main class
             nodes = 'Radius is out of range' # error message for radius
         return nodes
 #----------------------------------------END OF TASK 2----------------------------------------------------------------------
+
+#---------------------------------------PASSING PARAMETETERS BASED ON USER REQUIREMENTS-------------------------------------
 object = NeighboringNodes(7, False)
 object.create_grid()
-cords = object.return_cords(12)
-neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 2, type = "CROSS") #have to perform handling to accept either x and y or i
-print(cords)
+coordinates = object.return_cords(12)
+neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 2, type = "DIAMOND") 
+print(coordinates)
 print(neighbor_nodes)
