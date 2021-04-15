@@ -15,12 +15,12 @@ class NeighboringNodes():
 
     def __init__(self, size, debug:bool):
 ```
-* After the class is initiated, below method will create size X size grid with (x,y) coordinates and index values in the order of grid creation
+* After the class is initiated, below method will create size x size grid with (x,y) coordinates and index values in the order of grid creation
 ```
  def create_grid(self):
 ```
 * This algorithm was designed to assign coordinates from 1 instead of 0. (Ex: Node 1 will have (1,1) as (x,y) coordinates)
-* Below is a sample grid that is created with size = 3
+* Below is a sample grid structure that is created with size = 3 and represented as a Python list.
 ```
  [(1, [1, 1]), (2, [1, 2]), (3, [1, 3]), (4, [2, 1]), (5, [2, 2]), (6, [2, 3]), (7, [3, 1]), (8, [3, 2]), (9, [3, 3])]
 ```
@@ -41,7 +41,7 @@ class NeighboringNodes():
 ```
  def patterns(self, x, y, m, type)
 ```
-* Task 2 is developed using Python functions and exceptions were handles where ever possible. The algorithm can be found in the code sample and comments were provided for better understanding of code.
+* Task 2 is developed using Python functions and exceptions were handled where ever possible. The algorithm can be found in the code sample and comments were provided for better understanding of code.
 
 ### Task 3 - SQL schema
 * Assume that this Python application is logging all values to a database that were calculated by different methods stated in the application.
@@ -82,7 +82,7 @@ table grid_structure:
 ```
 * Assume that if we call neighboring_nodes() method, a table called **patterns** with radius, type of pattern and grid size were created as shown below
 ```
-table grid_operations:
+table patterns:
 
 |grid_size (int)| pattern_type (string) | radius (int) |
 |-------------- | ----------------------|--------------|
@@ -91,7 +91,13 @@ table grid_operations:
 |       3       |        SQUARE         |      1       |
 |       7       |        DIAMOND        |      3       |
 ```
-*
+* Since we have created three tables, we have a primary key assigned to each table and a foreign key relations between tables. Assume that **patterns** and **grid_structure** tables were related to **grid_operations**. Referential integrity is defined below.
+```
+ -> grid_size is the PRIMARY KEY for grid_operations
+ -> size is the PRIMARY_KEY for grid_structure and FOREIGN KEY for grid_operations
+ -> grid_size is the PRIMARY KEY for patterns and FOREIGN KEY for grid_operations
+```
+* 
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
