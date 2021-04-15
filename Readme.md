@@ -1,6 +1,6 @@
 # NEIGHBORING NODES CHALLENGE
 
-The below challenge is focused on constructing a nxn grid of defined size n consisting of (x,y) coordinates and index in the order of grid creation. Users can specify different parameters to know the coordinates, index position and print out patterns (SQUARE, CROSS and DIAMOND) based on their requirements. A Database schema was designed leveraging different tables and assumptions and was discussed in detail in the below sections
+The below challenge is focused on constructing a nxn grid of defined size n consisting of (x,y) coordinates and index in the order of grid creation. Users can specify different parameters to know the coordinates, index position and print out neighborhood patterns (SQUARE, CROSS and DIAMOND) based on their requirements. A Database schema was designed by constructing different tables and assumptions and was discussed in detail in the below sections
 
 
 ## Development
