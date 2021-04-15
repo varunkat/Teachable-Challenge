@@ -48,8 +48,10 @@ class NeighboringNodes():
 * Suppose if we are initializing the NeighboringNodes class with size, assume that value is written to a table named **grid** in MYSQL Database
 * The table structure for grid is given below with create table command
 ```
-MYSQL command: CREATE TABLE grid (grid_size INT);
-               INSERT INTO grid (grid_size) VALUES(3), (5), (7);
+MYSQL command: CREATE TABLE grid (
+  grid_size INT,
+  PRIMARY KEY(grid_size));
+  INSERT INTO grid (grid_size) VALUES(3), (5), (7);
 
 table grid:
 
@@ -61,7 +63,12 @@ table grid:
 ```
 * Once above table was created, assume that a n x n size grid is created and respective (x,y) and index values are stored to **grid_structure** table as below
 ```
-MYSQL command: CREATE TABLE grid_structure (size INT, x_value INT, y_value INT, m_index INT);
+MYSQL command: CREATE TABLE grid_structure (
+  size INT,
+  x_value INT,
+  y_value INT,
+  m_index INT,
+  FOREIGN KEY(size) REFERENCES grid(grid_size));
 
 table grid_structure:
 
@@ -86,7 +93,12 @@ table grid_structure:
 ```
 * Assume that if we call neighboring_nodes() method, a table called **patterns** with radius, type of pattern and grid size were created as shown below
 ```
-MYSQL command: CREATE TABLE patterns (grid_size INT, pattern_type VARCHAR(20), radius INT);
+MYSQL command: CREATE TABLE patterns (
+  grid_size INT,
+  pattern_type VARCHAR(20),
+  radius INT,
+  FOREIGN KEY(grid_size) REFERENCES grid(grid_size));
+
 table patterns:
 
 |grid_size (int)| pattern_type (varchar) | radius (int) |
