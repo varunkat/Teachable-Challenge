@@ -106,17 +106,18 @@ table patterns:
 * Consider for example, we want to calculate the total radius measured for each grid of defined size and display output in descending order of total. This value can be calculated by the below SQL command
 ```
 select grid_size, sum(radius) as tot_radius from patterns
-group by grid_size
-order by tot_radius desc;
+GROUP BY grid_size
+ORDER BY tot_radius desc;
 ```
-* Consider that we need x and y coordinate values at index = 5 for pattern type = DIAMOND. This can be acheived by the below SQL command
+* Consider that we need x and y coordinate values at index = 5 for pattern type = DIAMOND and grid size = 5. This can be acheived by the below SQL command
 ```
 with grid_values as (select g.grid_size as size, gs.x_value, gs.y_value from grid g
-  join grid_structure gs
+  JOIN grid_structure gs
   on g.grid_size = gs.size)
 select gv.x_value, gv.y_value, p.pattern_type from patterns p
-join grid_values gv
-on p.grid_size = gv.size;
+JOIN grid_values gv
+on p.grid_size = gv.size
+WHERE gv.size = 5 and p.pattern_type = "DIAMOND";
 ```
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output
