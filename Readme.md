@@ -45,17 +45,16 @@ class NeighboringNodes():
 
 ### Task 3 - SQL schema
 * Assume that this Python application is logging all values to a database that were calculated by different methods stated in the application.
-* Suppose if we are initializing the NeighboringNodes class with size and debug value, those values are written to a table named **grid_operations** in MYSQL Database
-* The table structure for grid_operations is given below.
+* Suppose if we are initializing the NeighboringNodes class with size, this value is written to a table named **grid** in MYSQL Database
+* The table structure for grid is given below.
 ```
-table grid_operations:
+table grid:
 
-|grid_size (int)| debug (boolean) |
-|-------------- | ----------------|
-|       3       |      True       |
-|       5       |      True       |
-|       3       |      False      |
-|       7       |      False      |
+|grid_size (int)|
+|---------------|
+|       3       |
+|       5       |
+|       7       |
 ```
 * Once this above table was created, assume that a n x n size grid is created and respective (x,y) and index values are stored to **grid_structure** table as below
 ```
@@ -91,13 +90,13 @@ table patterns:
 |       3       |        SQUARE         |      1       |
 |       7       |        DIAMOND        |      3       |
 ```
-* Since we have created three tables, we have a primary key assigned to each table and a foreign key relations between tables. Assume that **patterns** and **grid_structure** tables were related to **grid_operations**. Referential integrity is defined below.
+* Since we have created three tables, we have a primary key assigned to each table and a foreign key relations between tables. Assume that **patterns** and **grid_structure** tables were related to **grid**. Referential integrity is defined below.
 ```
- -> grid_size is the PRIMARY KEY for grid_operations
- -> size is the PRIMARY_KEY for grid_structure and FOREIGN KEY for grid_operations
- -> grid_size is the PRIMARY KEY for patterns and FOREIGN KEY for grid_operations
+ -> grid_size is the PRIMARY KEY for grid
+ -> size in grid_structure is a FOREIGN KEY for grid
+ -> grid_size in patterns is a FOREIGN KEY for grid
 ```
-* 
+*
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
