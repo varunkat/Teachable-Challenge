@@ -48,7 +48,7 @@ class NeighboringNodes():
 * Suppose if we are initializing the NeighboringNodes class with size and debug value, those values are written to a table named grid_operations in MYSQL Database
 * The table structure for grid_operations is given below.
 ```
-table grid_operations;
+table grid_operations:
 
 |grid_size (int)| debug (boolean) |
 |-------------- | ----------------|
@@ -57,9 +57,9 @@ table grid_operations;
 |       3       |      False      |
 |       7       |      False      |
 ```
-* Once this table was created, assume that a n X n size grid is created and respective (x,y) and index values are stored to grid_structure table as below
+* Once this above table was created, assume that a n x n size grid is created and respective (x,y) and index values are stored to grid_structure table as below
 ```
-table grid_structure;
+table grid_structure:
 
 |   size (int)  |   x_value (int)  |  y_value (int) |   index (int)   |
 |-------------- | -----------------| ---------------|-----------------|
@@ -80,6 +80,18 @@ table grid_structure;
 |       .       |        .         |       .        |        .        |
 |       7       |        7         |       7        |        49       |
 ```
+* Assume that if we call neighboring_nodes() method, a table called patterns with radius, type of pattern and grid size were created as shown below
+```
+table grid_operations:
+
+|grid_size (int)| pattern_type (string) | radius (int) |
+|-------------- | ----------------------|--------------|
+|       3       |        DIAMOND        |      1       |
+|       5       |        CROSS          |      2       |
+|       3       |        SQUARE         |      1       |
+|       7       |        DIAMOND        |      3       |
+```
+* 
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
 
