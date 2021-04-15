@@ -102,6 +102,7 @@ table patterns:
  -> size key in grid_structure is a FOREIGN KEY for grid
  -> grid_size key in patterns is a FOREIGN KEY for grid
 ```
+#### SQL examples
 * 
 ## Prerequisites
 This Algorithm is built by using Python 3.7.6 and need a Python environment to run the code and pass different parameters for desired output.
