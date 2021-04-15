@@ -103,7 +103,7 @@ class NeighboringNodes():  # initiating main class
 #----------------------------------------END OF TASK 2----------------------------------------------------------------------
 
 #---------------------------------------PASSING PARAMETERS BASED ON USER REQUIREMENTS-------------------------------------
-object = NeighboringNodes(7, False)
+object = NeighboringNodes(7, True)
 object.create_grid()
 coordinates = object.return_cords(12)
 neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 3, type = "DIAMOND")

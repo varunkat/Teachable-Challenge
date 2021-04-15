@@ -115,7 +115,7 @@ table patterns:
  -> grid_size key in patterns is a FOREIGN KEY for grid
 ```
 #### SQL Examples
-* Consider for example, we want to calculate the total radius measured for each grid of defined size and display output in descending order of total. This value can be calculated by the below SQL command
+* Consider for example, we want to calculate the total radius measured for each grid and display output in descending order of total. This value can be calculated by the below SQL command
 ```
 select grid_size, sum(radius) as tot_radius from patterns
 GROUP BY grid_size
@@ -146,7 +146,7 @@ object.create_grid()
 coordinates = object.return_cords(12)
 print(coordinates)
 ```
-* If we want to get the neighboring nodes for (4,4) coordinates, radius = 2 and pattern type = DIAMOND, parameters must be passed as mentioned below
+* If we want to get the neighboring nodes for the node having (4,4) coordinates, radius = 2 and pattern type = DIAMOND, parameters must be passed as mentioned below
 ```
 neighbor_nodes = object.neighborhood_nodes(x = 4, y = 4, i = None , m = 2, type = "DIAMOND")
 print(neighbor_nodes)
